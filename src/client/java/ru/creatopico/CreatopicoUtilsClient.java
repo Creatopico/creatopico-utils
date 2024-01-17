@@ -7,8 +7,14 @@ import net.fabricmc.fabric.impl.command.client.ClientCommandInternals;
 public class CreatopicoUtilsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
-			ClientCommandInternals.executeCommand("bobby upgrade");
-		});
+
+		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) ->
+				CreatopicoUtils
+						.CONFIG
+						.runCommandsOnEnter()
+						.stream()
+						.filter(command -> !command.isBlank())
+						.forEach(ClientCommandInternals::executeCommand)
+		);
 	}
 }

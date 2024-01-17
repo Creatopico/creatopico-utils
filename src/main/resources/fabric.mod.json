@@ -3,9 +3,9 @@
 	"id": "creatopicoutils",
 	"version": "${version}",
 	"name": "Creatopico Utils",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Creatopico utils mod",
 	"authors": [
-		"Me!"
+		"LittleLigr"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -30,7 +30,7 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.15.5",
+		"fabricloader": ">=0.15.3",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"

@@ -1,0 +1,7 @@
+{
+  "text.config.creatopico.section.Client": "Клиентские опции",
+  "text.config.creatopico.option.runCommandsOnEnter": "Запустить команды при подключении к серверу",
+  "text.config.creatopico.category.contraption": "Штуковины",
+  "text.config.creatopico.option.contraption.dimensions": "Измерения",
+  "text.config.creatopico.option.contraption.dimensions.tooltip": "Измерения, в которых штуковинам разрешено ломать блоки"
+}

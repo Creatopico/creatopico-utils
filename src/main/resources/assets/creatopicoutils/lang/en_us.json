@@ -1,0 +1,7 @@
+{
+  "text.config.creatopico.section.Client": "Client options",
+  "text.config.creatopico.option.runCommandsOnEnter": "Launch commands on player enter server",
+  "text.config.creatopico.category.contraption": "Contraption",
+  "text.config.creatopico.option.contraption.dimensions": "Block breaking dimensions",
+  "text.config.creatopico.option.contraption.dimensions.tooltip": "Dimensions, where contraption allowed to break block when disassembled"
+}
