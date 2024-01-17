@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "creatopicoutils",
+	"version": "${version}",
+	"name": "Creatopico Utils",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/creatopicoutils/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ru.creatopico.CreatopicoUtils"
+		],
+		"client": [
+			"ru.creatopico.CreatopicoUtilsClient"
+		]
+	},
+	"mixins": [
+		"creatopicoutils.mixins.json",
+		{
+			"config": "creatopicoutils.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.5",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
