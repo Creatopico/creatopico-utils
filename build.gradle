@@ -48,9 +48,23 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 
 	modImplementation("com.simibubi.create:create-fabric-${minecraft_version}:${create_version}")
+
 	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
 	include "io.wispforest:owo-sentinel:${project.owo_version}"
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+
+
+	implementation "org.postgresql:postgresql:${project.jdbc_postgresql}"
+	include "org.postgresql:postgresql:${project.jdbc_postgresql}"
+
+	implementation("org.jdbi:jdbi3-core:${project.jdbi_core}")
+	include "org.jdbi:jdbi3-core:${project.jdbi_core}"
+
+	implementation("org.jdbi:jdbi3-postgres:${project.jdbi_postgres}")
+	include "org.jdbi:jdbi3-postgres:${project.jdbi_postgres}"
+
+	implementation("org.jdbi:jdbi3-sqlobject:${project.jdbi_sqlobject}")
+	include "org.jdbi:jdbi3-sqlobject:${project.jdbi_sqlobject}"
 }
 
 processResources {

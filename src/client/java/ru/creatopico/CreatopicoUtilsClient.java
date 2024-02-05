@@ -9,9 +9,7 @@ public class CreatopicoUtilsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 
 		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) ->
-				CreatopicoUtils
-						.CONFIG
-						.runCommandsOnEnter()
+				CreatopicoUtils.CONFIG.runCommandsOnEnter()
 						.stream()
 						.filter(command -> !command.isBlank())
 						.forEach(ClientCommandInternals::executeCommand)

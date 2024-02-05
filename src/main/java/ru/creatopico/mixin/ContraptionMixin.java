@@ -34,6 +34,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.creatopico.CreatopicoUtils;
+import ru.creatopico.contraption.BreakableBlocks;
 
 import java.util.List;
 import java.util.Map;
@@ -138,16 +139,15 @@ public class ContraptionMixin {
                 Block worldBlock = blockState.getBlock();
                 Identifier location = world.getDimensionKey().getValue();
 
-                boolean breakBlock = CreatopicoUtils.breakBlocks.contains(worldBlock);
-                boolean inAWorld = CreatopicoUtils.dimensionsWorksIn.stream().map(location::equals).reduce(Boolean::logicalOr).orElse(false);
+                boolean breakBlock = BreakableBlocks.blocks.contains(worldBlock);
+                boolean inAWorld = BreakableBlocks.dimensionsWorksIn.stream().map(location::equals).reduce(Boolean::logicalOr).orElse(false);
 
-                if (
-                        blockState.getHardness(world, targetPos) == -1
-                        || (!breakBlock && !inAWorld)
-                        || (
-                            state.getCollisionShape(world, targetPos).isEmpty()
-                                    && !blockState.getCollisionShape(world, targetPos).isEmpty())
-                )
+                boolean hardness = blockState.getHardness(world, targetPos) == -1;
+                boolean breakableBlock = !breakBlock && !inAWorld;
+                boolean collision = state.getCollisionShape(world, targetPos).isEmpty()
+                        && !blockState.getCollisionShape(world, targetPos).isEmpty();
+
+                if (hardness || breakableBlock || collision)
                 {
                     if (targetPos.getY() == world.getBottomY())
                         targetPos = targetPos.up();
