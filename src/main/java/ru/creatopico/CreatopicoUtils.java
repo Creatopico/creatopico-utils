@@ -7,8 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.creatopico.config.Config;
 import ru.creatopico.contraption.BreakableBlocks;
-import ru.creatopico.jdbc.Database;
-import ru.creatopico.jdbc.entities.player.PlayerEntity;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,7 +20,6 @@ public class CreatopicoUtils implements ModInitializer {
 	public static final Config CONFIG = Config.createAndLoad();
 
 
-	public static Database database;
 
 	@Override
 	public void onInitialize() {
